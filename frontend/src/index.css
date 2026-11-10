@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  
+  --color-canvas: #F5F6F8;
+  --color-surface: rgba(255, 255, 255, 0.78);
+  --color-surface-solid: #FFFFFF;
+  --color-surface-subtle: #F9FAFB;
+  --color-surface-hover: rgba(255, 255, 255, 0.95);
+  
+  --color-primary-text: #17191D;
+  --color-secondary-text: #777E87;
+  --color-tertiary-text: #9DA4AE;
+  
+  --color-accent-blue: #4778D5;
+  --color-accent-hover: #3B66B7;
+  --color-accent-subtle: rgba(71, 120, 213, 0.08);
+  --color-accent-border: rgba(71, 120, 213, 0.22);
+  
+  --color-success: #27865B;
+  --color-success-subtle: rgba(39, 134, 91, 0.08);
+  --color-success-border: rgba(39, 134, 91, 0.2);
+  
+  --color-warning: #C28A35;
+  --color-warning-subtle: rgba(194, 138, 53, 0.08);
+  --color-warning-border: rgba(194, 138, 53, 0.2);
+  
+  --color-danger: #C65353;
+  --color-danger-subtle: rgba(198, 83, 83, 0.08);
+  --color-danger-border: rgba(198, 83, 83, 0.2);
+  
+  --color-border-subtle: rgba(20, 30, 50, 0.08);
+  --color-border-medium: rgba(20, 30, 50, 0.12);
+  --color-border-strong: rgba(20, 30, 50, 0.2);
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  color: #17191D;
+  background-color: #F5F6F8;
+  caret-color: #4778D5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #F5F6F8;
+  color: #17191D;
+  overflow-x: hidden;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+::selection {
+  background-color: rgba(71, 120, 213, 0.18);
+  color: #17191D;
+}
+
+/* Apple-style subtle light scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 30, 50, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 30, 50, 0.28);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(20, 30, 50, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(20, 30, 50, 0.04), 0 1px 3px rgba(20, 30, 50, 0.03);
+}
+
+.glass-panel-solid {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(20, 30, 50, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(20, 30, 50, 0.04), 0 1px 3px rgba(20, 30, 50, 0.03);
+}
+
+/* Motion Sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

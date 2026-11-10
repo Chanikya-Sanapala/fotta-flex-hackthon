@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T15:17:30.000Z",
+  "title": "Design System: RoutePilot",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Electric Cyan",
+        "canonical": "#22d3ee",
+        "tonalRamp": ["#083344", "#155e75", "#0e7490", "#06b6d4", "#22d3ee", "#67e8f9", "#a5f3fc", "#cffafe"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Deep Space Canvas",
+        "canonical": "#080d18",
+        "tonalRamp": ["#030712", "#080d18", "#0b1220", "#101827", "#1e293b", "#334155", "#475569", "#64748b"]
+      },
+      "status-success": {
+        "role": "semantic",
+        "displayName": "Operational Green",
+        "canonical": "#34d399",
+        "tonalRamp": ["#022c22", "#064e3b", "#065f46", "#047857", "#10b981", "#34d399", "#6ee7b7", "#a7f3d0"]
+      },
+      "status-warning": {
+        "role": "semantic",
+        "displayName": "Operational Amber",
+        "canonical": "#fbbf24",
+        "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"]
+      },
+      "status-danger": {
+        "role": "semantic",
+        "displayName": "Operational Rose",
+        "canonical": "#f87171",
+        "tonalRamp": ["#450a0a", "#7f1d1d", "#991b1b", "#b91c1c", "#dc2626", "#ef4444", "#f87171", "#fca5a5"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Primary KPI numbers and major view titles." },
+      "headline": { "displayName": "Headline", "purpose": "Card titles and modal headers." },
+      "body": { "displayName": "Body", "purpose": "General interface text and descriptions." },
+      "mono": { "displayName": "Monospace", "purpose": "Entity identifiers, coordinates, and raw numerical values." }
+    },
+    "shadows": [
+      { "name": "glow-cyan", "value": "0 0 16px rgba(34, 211, 238, 0.2)", "purpose": "Subtle focal glow for active button and navigation states." },
+      { "name": "tonal-card", "value": "0 1px 3px rgba(0, 0, 0, 0.4)", "purpose": "Discrete grounding for elevated cards." }
+    ],
+    "motion": [
+      { "name": "ease-out-fast", "value": "cubic-bezier(0, 0, 0.2, 1)", "purpose": "150ms state changes for hover and active button states." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Used for main operational triggers like 'Run Optimization' and 'Start Planning'.",
+      "html": "<button class=\"ds-btn-primary\">RUN OPTIMIZATION</button>",
+      "css": ".ds-btn-primary { background: #22d3ee; color: #020617; padding: 10px 18px; border-radius: 8px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 700; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.1s ease; } .ds-btn-primary:hover { background: #06b6d4; } .ds-btn-primary:active { transform: scale(0.98); }"
+    },
+    {
+      "name": "KPI Metric Card",
+      "kind": "card",
+      "refersTo": "card-panel",
+      "description": "Displays critical operational KPIs with label, metric number, and helper context.",
+      "html": "<div class=\"ds-kpi-card\"><div class=\"ds-kpi-header\"><span class=\"ds-kpi-label\">Route distance (est.)</span><span class=\"ds-kpi-icon\">📍</span></div><div class=\"ds-kpi-value\">24.50 km</div><div class=\"ds-kpi-detail\">Straight-line Haversine estimate</div></div>",
+      "css": ".ds-kpi-card { background: #101827; border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 16px; padding: 20px; font-family: Inter, sans-serif; color: #f8fafc; } .ds-kpi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .ds-kpi-label { font-size: 12px; color: #94a3b8; } .ds-kpi-value { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; } .ds-kpi-detail { font-size: 11px; color: #64748b; margin-top: 4px; }"
+    },
+    {
+      "name": "Status Pill Badge",
+      "kind": "chip",
+      "refersTo": "chip-status",
+      "description": "Indicates system status, delivery readiness, and active dispatch state.",
+      "html": "<span class=\"ds-badge ds-badge-success\"><span class=\"ds-dot\"></span>COMPLETED</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 9999px; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; } .ds-badge-success { background: rgba(52, 211, 153, 0.1); color: #34d399; } .ds-dot { width: 6px; height: 6px; border-radius: 9999px; background: currentColor; }"
+    },
+    {
+      "name": "Monospace Table Row",
+      "kind": "custom",
+      "refersTo": "table-row",
+      "description": "High-density data table row for deliveries and vehicles with monospace keys.",
+      "html": "<div class=\"ds-table-row\"><span class=\"ds-cell-seq\">#1</span><span class=\"ds-cell-id\">DEL-9082-A</span><span class=\"ds-cell-name\">Central Fulfillment Hub</span><span class=\"ds-badge ds-badge-success\">PLANNED</span></div>",
+      "css": ".ds-table-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #0b1220; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); font-family: Inter, sans-serif; font-size: 12px; color: #f8fafc; } .ds-cell-seq { font-weight: 700; color: #22d3ee; } .ds-cell-id { font-family: ui-monospace, monospace; font-size: 11px; color: #cbd5e1; } .ds-cell-name { color: #94a3b8; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Tactical Air Traffic Control Tower",
+    "overview": "RoutePilot's visual design system embodies the discipline, restraint, and precision of a mission-critical logistics command center. Designed specifically for dispatch controllers and fleet managers executing high-density route planning, the interface treats every pixel as operational real estate. Unnecessary decorative gradients, consumer glassmorphism, and frivolous animations are strictly rejected in favor of high-legibility typographic hierarchy, crisp tabular data, and purposeful color contrast.",
+    "keyCharacteristics": [
+      "High-Density Operational Scannability: Tight vertical rhythm, compact data rows, and zero empty padding bloat.",
+      "Tonal Layering Over Shadows: Structural hierarchy established through dark slate surfaces and fine hairline borders rather than muddy elevation shadows.",
+      "Monospace Entity Rigor: Distinct monospace typography for all entity keys, machine codes, and geographical coordinates.",
+      "Strict Visual Cohesion: Seamless aesthetic continuity across Overview, Route Planning, Fleet, and Deliveries modules."
+    ],
+    "rules": [
+      {
+        "name": "The Restrained Cyan Rule",
+        "body": "Electric cyan must never exceed 5% of any viewport. Its power comes from scarcity—guiding the operator's eye directly to actionable buttons, active routes, and execution states.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monospace Identifier Rule",
+        "body": "All operational entities (delivery IDs, run IDs, vehicle registrations, site IDs, and GPS coordinates) must be rendered in monospace typography. Proportional fonts are forbidden for system entity keys.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Boundary Rule",
+        "body": "Depth is created by contrasting adjacent surfaces (#0b1220 vs #101827) paired with a 1px border. Drop shadows are restricted to subtle glow highlights under focused buttons or active pills.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use monospace typography for every identifier (runId, deliveryId, vehicleId, siteId).",
+      "Do label route distance and duration as estimates derived from straight-line Haversine math.",
+      "Do maintain a strict 1px border hierarchy (border-white/[0.07]) to delineate dark surfaces.",
+      "Do preserve high data density in tables and lists so dispatchers can review routes without excessive vertical scrolling.",
+      "Do provide clear, contextual empty and loading states across all four operational modules."
+    ],
+    "donts": [
+      "Don't use generic AI-generated aesthetic tropes (blurry glassmorphism, heavy radial gradients, floating 3D spheres).",
+      "Don't use decorative animations that slow down user interaction or page responsiveness.",
+      "Don't use Electric Cyan as a background fill for large cards or structural sidebars.",
+      "Don't truncate operational IDs without providing full visual tooltips or copy access.",
+      "Don't invent fake REST endpoints or mock data when the backend architecture boundary is clear."
+    ]
+  }
+}
+

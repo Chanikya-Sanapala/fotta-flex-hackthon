@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production / build outputs
+dist/
+**/dist/
+target/
+**/target/
+build/
+**/build/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / local configs
+.env
+.env.local
+*.local
+
+# IDE & Editor
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Agent scratch directories
+.agent/
+.agents/
+.claude/
+.codex/
+.devin/
+.gemini/
+.grok/
+.opencode/
+.pi/
